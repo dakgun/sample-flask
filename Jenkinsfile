@@ -10,8 +10,6 @@ pipeline {
 	                      }
             }
         }
-    }
-   stages {
         stage('Container') {
             steps {
                  script {
