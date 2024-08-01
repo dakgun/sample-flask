@@ -12,10 +12,10 @@ pipeline {
         }
         stage('Container') {
             steps {
-                 script {
-		                    app.run(["-p 8080:8080"])
+                
+			app.run(["-p 8080:8080"])
 		                
-	                      }
+	                      
             }
         }
     }
