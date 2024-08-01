@@ -13,8 +13,19 @@ pipeline {
         stage('Container') {
             steps {
                 
-			app.run(["-p 8080:8080"])
-		                
+		sh """
+   				docker stop \$(docker ps | grep 'Up'| cut -f1 -d ' ' ) 2 > /dev/null
+       				sleep 5
+       			"""
+
+                    }
+	}
+       
+	stage('Docker run') {
+            steps {
+			sh "docker run -itd -p 8082:8082 akgundyg/exercise:latest"
+
+                    }
 	                      
             }
         }
