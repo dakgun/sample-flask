@@ -23,7 +23,7 @@ pipeline {
        
 	stage('Docker run') {
             steps {
-			sh "docker run -itd -p 8080:8080 akgundyg/exercise:latest"
+			sh "docker run -itd -p 8080:8080 akgundyg/sample-flask:latest"
 
                     }
 	                      
